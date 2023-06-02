@@ -1,0 +1,1 @@
+docker run --name token_generator --rm -v ./application.toml:/app/application.toml victorfconti/application_tag_creator
