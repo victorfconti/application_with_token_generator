@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show files
-        run: ls
+        run: ls ${{ github.workspace }}
+
   Generate-Token:
     runs-on: ubuntu-latest
     container:
