@@ -12,7 +12,7 @@ jobs:
         run: | 
           cp application.toml /app;
           cd /app;
-          token=(python main.py);
+          token=`python main.py`;
           echo "application_token=$token" >> "$GITHUB_ENV";
       - name: "Save token"
         run: |
