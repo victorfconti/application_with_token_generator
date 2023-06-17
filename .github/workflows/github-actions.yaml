@@ -13,16 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: victorfconti/application_tag_creator:latest
-      volumes:
-        - /application.toml:/app/application.toml
     steps:
       - uses: actions/checkout@v1
       - name: "Generate token"
         run: | 
-          echo "raiz";
-          ls;
+          copy application.toml /app;
           cd /app;
-          echo "Na /app";
-          ls;
-          
           python main.py
