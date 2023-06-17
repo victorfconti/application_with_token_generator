@@ -5,6 +5,7 @@ jobs:
   Show-Files:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Show files
         run: ls
 
