@@ -18,4 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: "Generate token"
-        run: cd /app; python main.py
+        run: | 
+          cd /app; 
+          ls;
+          cd application.toml;
+          ls;
+          python main.py
