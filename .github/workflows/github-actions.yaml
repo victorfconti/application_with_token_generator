@@ -7,7 +7,7 @@ jobs:
     container:
       image: victorfconti/application_tag_creator:latest
       volumes:
-        - application.toml:/application.toml
+        - application.toml:/app/application.toml
     steps:
       - name: "Generate token"
-        run: python main.py
+        run: cd /app; python main.py
