@@ -2,13 +2,6 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Show-Files:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Show files
-        run: ls
-
   Generate-Token:
     runs-on: ubuntu-latest
     container:
@@ -19,4 +12,8 @@ jobs:
         run: | 
           cp application.toml /app;
           cd /app;
-          python main.py
+          token=python main.py 
+          echo "application_token=$token" >> "$GITHUB_ENV"
+      - name: "Save token"
+        run: |
+          echo "${{ env.application_token }}"
