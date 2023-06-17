@@ -16,5 +16,6 @@ jobs:
       volumes:
         - ${{ github.workspace }}/application.toml:/app/application.toml
     steps:
+      - uses: actions/checkout@v1
       - name: "Generate token"
         run: cd /app; python main.py
