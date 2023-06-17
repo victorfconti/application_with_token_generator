@@ -19,5 +19,10 @@ jobs:
       - uses: actions/checkout@v1
       - name: "Generate token"
         run: | 
-          cd /app; 
+          echo "raiz";
+          ls;
+          cd /app;
+          echo "Na /app";
+          ls;
+          
           python main.py
