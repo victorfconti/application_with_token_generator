@@ -10,4 +10,4 @@ jobs:
         - application.toml:/application.toml
     steps:
       - name: "Generate token"
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+        run: python main.py
