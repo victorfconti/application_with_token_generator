@@ -20,7 +20,4 @@ jobs:
       - name: "Generate token"
         run: | 
           cd /app; 
-          ls;
-          cd application.toml;
-          ls;
           python main.py
