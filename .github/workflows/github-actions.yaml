@@ -12,8 +12,8 @@ jobs:
         run: | 
           cp application.toml /app;
           cd /app;
-          token=python main.py 
-          echo "application_token=$token" >> "$GITHUB_ENV"
+          token=python main.py;
+          echo "application_token=$token" >> "$GITHUB_ENV";
       - name: "Save token"
         run: |
           echo "${{ env.application_token }}"
