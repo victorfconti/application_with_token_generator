@@ -17,4 +17,4 @@ jobs:
       - name: "Save token"
         run: |
           curl -s -X POST --header "X-Vault-Token: ${{ secrets.VAULT_TOKEN }}" --header "X-Vault-Namespace: ${{ secrets.VAULT_NAMESPACE }}"  \
-          -d '{"token":{"value":"$GITHUB_ENV.application_token"}}'   ${{secrets.VAULT_URL}}/v1/kv/application
+          -d '{"token":{"value":"${{GITHUB_ENV.application_token}}"}}'   ${{secrets.VAULT_URL}}/v1/kv/application
