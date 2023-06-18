@@ -16,4 +16,5 @@ jobs:
           echo "application_token=$token" >> "$GITHUB_ENV";
       - name: "Save token"
         run: |
-          echo "${{ env.application_token }}"
+          curl -s -X POST --header "X-Vault-Token: ${{ secrets.VAULT_TOKEN }}" --header "X-Vault-Namespace: ${{ secrets.VAULT_NAMESPACE }}"  \
+          -d '{"token":{"value":"$GITHUB_ENV.application_token"}}'   $VAULT_ADDR/v1/kv/application
